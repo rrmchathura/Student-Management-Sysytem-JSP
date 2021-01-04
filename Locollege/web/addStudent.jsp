@@ -27,20 +27,20 @@
    {
            String regno = request.getParameter("regno");
            String name = request.getParameter("name");
+           String address = request.getParameter("address");
    	   String course = request.getParameter("course");
-   	   String address = request.getParameter("address");
    	   String phone = request.getParameter("phone");
    	   
    	   Class.forName("com.mysql.jdbc.Driver");
                                  con = DriverManager.getConnection("jdbc:mysql://localhost/asiancollege","root","");
-   	   String query = "INSERT INTO student(regno,name,course,address,phone) VALUES (?,?,?,?,?)";
+   	   String query = "INSERT INTO student(regno,name,address,course,phone) VALUES (?,?,?,?,?)";
    	   
    	   PreparedStatement pst = con.prepareStatement(query);
    	   
    	   pst.setString(1, regno);
    	   pst.setString(2, name);
+           pst.setString(4, address);
    	   pst.setString(3, course);
-   	   pst.setString(4, address);
    	   pst.setString(5, phone);
    	   
    	   pst.executeUpdate();
@@ -83,6 +83,13 @@
    <input type="text" name="name" class="form-control" id="tname">
                   </div>
  </div>
+             <div class="form-group">
+                            <div  class="col-sm-4"></div>
+                            <div  class="col-sm-4 mx-auto">
+                                        <label>Address:</label>
+   <input type="text" name="address" class="form-control" id="address">
+                            </div>
+ </div>
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
@@ -90,13 +97,7 @@
    <input type="text" name="course" class="form-control" id="subject">
                   </div>
  </div>
- <div class="form-group">
-                            <div  class="col-sm-4"></div>
-                            <div  class="col-sm-4 mx-auto">
-                                        <label>Address:</label>
-   <input type="text" name="address" class="form-control" id="address">
-                            </div>
- </div>
+
             
  <div class="form-group">
                             <div  class="col-sm-4"></div>
