@@ -46,7 +46,7 @@
    	   pst.executeUpdate();
    	   
    	   color = "green";
-   	   msg = "Teacher Added Succesfully";
+   	   msg = "Student Added Succesfully";
  
    }catch(Exception ex){
    ex.printStackTrace();
@@ -65,7 +65,7 @@
             <div class="form-group">
                 <div  class="col-sm-4"></div>
                 <div  class="col-sm-4">
-                    <h2 style="text-align: center">Teacher Details</h2>
+                    <h2 style="text-align: center">Student Details</h2>
                 </div>
             </div>
             <hr/>
@@ -79,15 +79,15 @@
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label >Teacher Name</label>
-   <input type="text" name="tname" class="form-control" id="tname">
+                   <label >Student Name</label>
+   <input type="text" name="name" class="form-control" id="tname">
                   </div>
  </div>
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label>Subject</label>
-   <input type="text" name="subject" class="form-control" id="subject">
+                   <label>Course</label>
+   <input type="text" name="course" class="form-control" id="subject">
                   </div>
  </div>
  <div class="form-group">
