@@ -12,7 +12,7 @@
  
 <html>
     <head>    
-        <title>Teachers Registration Form</title>
+        <title>Student Registration Form</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         </head>
     <body>
@@ -25,21 +25,21 @@
    {
    try
    {
-                                String regno = request.getParameter("regno");
-   String tname = request.getParameter("tname");
-   	   String subject = request.getParameter("subject");
+           String regno = request.getParameter("regno");
+           String name = request.getParameter("name");
+   	   String course = request.getParameter("course");
    	   String address = request.getParameter("address");
    	   String phone = request.getParameter("phone");
    	   
    	   Class.forName("com.mysql.jdbc.Driver");
                                  con = DriverManager.getConnection("jdbc:mysql://localhost/asiancollege","root","");
-   	   String query = "INSERT INTO teacher(regno,teachername,subject,address,phone) VALUES (?,?,?,?,?)";
+   	   String query = "INSERT INTO student(regno,name,course,address,phone) VALUES (?,?,?,?,?)";
    	   
    	   PreparedStatement pst = con.prepareStatement(query);
    	   
    	   pst.setString(1, regno);
-   	   pst.setString(2, tname);
-   	   pst.setString(3, subject);
+   	   pst.setString(2, name);
+   	   pst.setString(3, course);
    	   pst.setString(4, address);
    	   pst.setString(5, phone);
    	   
