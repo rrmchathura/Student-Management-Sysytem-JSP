@@ -22,7 +22,7 @@
 <body style="padding: 30px" >
     
     <div>
-        
+        <a href="addStudent.jsp" class="btn btn-success">Add Student</a>
     </div>
      
         
