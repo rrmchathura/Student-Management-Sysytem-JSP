@@ -10,7 +10,7 @@
  
 <html>
     <head>    
-        <title>Student Registration Form</title>
+        <title>Edit Teacher Form</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
  
         </head>
@@ -28,28 +28,27 @@
    {
    try
    {
-                                String regno = request.getParameter("regno");
-   String name = request.getParameter("name");
-   	   String course = request.getParameter("course");
+           String regno = request.getParameter("regno");
+           String name = request.getParameter("teachername");
+   	   String subject = request.getParameter("subject");
    	   String address = request.getParameter("address");
    	   String phone = request.getParameter("phone");
    	   
    	   Class.forName("com.mysql.jdbc.Driver");
                                  con = DriverManager.getConnection("jdbc:mysql://localhost/asiancollege","root","");
-   	   String query = "update student set name = ?, address= ?, course =? ,phone= ? where regno = ?";
+   	   String query = "update student set teachername = ?, subject =? , address= ?,phone= ? where regno = ?";
    	   
    	   PreparedStatement pst = con.prepareStatement(query);
    	   
-   	   
-   	   pst.setString(1, name);
-                                pst.setString(2, address);
-   	   pst.setString(3, course);
-   	   pst.setString(4, phone);
-   	   pst.setString(5, regno);
+   	   pst.setString(1, regno);
+   	   pst.setString(2, name);
+           pst.setString(3, subject);
+           pst.setString(4, address);
+   	   pst.setString(5, phone);
    	   pst.executeUpdate();
    	   
    	   color = "green";
-   	   msg = "Student Updateddddd Succesfully";
+   	   msg = "Teacher Updated Succesfully";
    	   
    	   
    }catch(Exception ex){
@@ -65,7 +64,7 @@
  <h4 style="color:<%= color %>"><%= msg %></h4>
  </div>
         
-        <form id="form" method="post" action="editStudent.jsp" class="form-horizontal">
+        <form id="form" method="post" action="editTeacher.jsp" class="form-horizontal">
             
              <% 
                           
@@ -77,7 +76,7 @@
                              
                            String id = request.getParameter("id");
                            
-                            pst = con.prepareStatement("select * from student where regno = ?");
+                            pst = con.prepareStatement("select * from teacher where regno = ?");
                             pst.setString(1, id);
                             rs = pst.executeQuery();
                             
@@ -89,7 +88,7 @@
             <div class="form-group">
                 <div  class="col-sm-4"></div>
                 <div  class="col-sm-4">
-                    <h2 style="text-align: center">Student Details</h2>
+                    <h2 style="text-align: center">Teacher Details</h2>
                 </div>
             </div>
             <hr/>
@@ -103,14 +102,14 @@
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label >Student Name</label>
+                   <label >Teacher Name</label>
    <input type="text" name="name" class="form-control" id="name"  value="<%= rs.getString("name") %>">
                   </div>
  </div>
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label>Course:</label>
+                   <label>Subject:</label>
    <input type="text" name="course" class="form-control" id="course" value="<%= rs.getString("course") %>">
                   </div>
  </div>
