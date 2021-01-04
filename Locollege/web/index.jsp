@@ -23,6 +23,7 @@
     
     <div>
         <a href="addStudent.jsp" class="btn btn-success">Add Student</a>
+        <a href="addTeacher.jsp" class="btn btn-primary">Add Teacher</a>
     </div>
      
         
