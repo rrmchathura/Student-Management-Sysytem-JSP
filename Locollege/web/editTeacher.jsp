@@ -36,7 +36,7 @@
    	   
    	   Class.forName("com.mysql.jdbc.Driver");
                                  con = DriverManager.getConnection("jdbc:mysql://localhost/asiancollege","root","");
-   	   String query = "update student set teachername = ?, subject =? , address= ?,phone= ? where regno = ?";
+   	   String query = "update teacher set teachername = ?, subject =? , address= ?,phone= ? where regno = ?";
    	   
    	   PreparedStatement pst = con.prepareStatement(query);
    	   
@@ -103,14 +103,14 @@
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
                    <label >Teacher Name</label>
-   <input type="text" name="name" class="form-control" id="name"  value="<%= rs.getString("name") %>">
+   <input type="text" name="name" class="form-control" id="name"  value="<%= rs.getString("teachername") %>">
                   </div>
  </div>
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
                    <label>Subject:</label>
-   <input type="text" name="course" class="form-control" id="course" value="<%= rs.getString("course") %>">
+   <input type="text" name="course" class="form-control" id="course" value="<%= rs.getString("subject") %>">
                   </div>
  </div>
  <div class="form-group">
