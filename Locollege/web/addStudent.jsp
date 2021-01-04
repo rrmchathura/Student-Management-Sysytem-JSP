@@ -60,7 +60,7 @@
  <h4 style="color:<%= color %>"><%= msg %></h4>
  </div>
         
-        <form id="form" method="post" action="addTeacher.jsp" class="form-horizontal">
+        <form id="form" method="post" action="addStudent.jsp" class="form-horizontal">
          
             <div class="form-group">
                 <div  class="col-sm-4"></div>
