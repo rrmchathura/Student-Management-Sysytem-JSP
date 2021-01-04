@@ -19,14 +19,23 @@
         }
      </style>
 </head>
-     
-<body style="padding: 30px" >
+
+         
+            <div class="form-group">
+                <div  class="col-sm-4"></div>
+                <div  class="col-sm-4">
+                    <h2 style="text-align: center">School Management</h2>
+                </div>
+            </div>
+            <hr/>
     
     <div>
+
         <a href="addStudent.jsp" class="btn btn-success">Add Student</a>
-        <a href="addTeacher.jsp" class="btn btn-primary">Add Teacher</a>
+       <a href="addTeacher.jsp" class="btn btn-primary">Add Teacher</a>
         <a href="viewStudent.jsp" class="btn btn-warning">View Student</a>
         <a href="listTeacher.jsp" class="btn btn-danger">View Teacher</a>
+   
     </div>
     
 </body>
