@@ -18,6 +18,7 @@
         background-image:url("university_of_toronto_1_1.jpg");
         }
      </style>
+</head>
      
 <body style="padding: 30px" >
     
@@ -27,6 +28,9 @@
         <a href="viewStudent.jsp" class="btn btn-warning">View Student</a>
         <a href="listTeacher.jsp" class="btn btn-danger">View Teacher</a>
     </div>
+    
+</body>
+</html>
      
         
         
