@@ -29,22 +29,23 @@
    try
    {
            String regno = request.getParameter("regno");
-           String name = request.getParameter("teachername");
+           String name = request.getParameter("tname");
    	   String subject = request.getParameter("subject");
    	   String address = request.getParameter("address");
    	   String phone = request.getParameter("phone");
    	   
    	   Class.forName("com.mysql.jdbc.Driver");
-                                 con = DriverManager.getConnection("jdbc:mysql://localhost/asiancollege","root","");
-   	   String query = "update teacher set teachername = ?, subject =? , address= ?,phone= ? where regno = ?";
+           con = DriverManager.getConnection("jdbc:mysql://localhost/asiancollege","root","");
+   	   String query = "update teacher set teachername =?, subject =? , address= ?,phone= ? where regno = ?";
    	   
    	   PreparedStatement pst = con.prepareStatement(query);
    	   
-   	   pst.setString(1, regno);
-   	   pst.setString(2, name);
-           pst.setString(3, subject);
-           pst.setString(4, address);
-   	   pst.setString(5, phone);
+   	   
+   	   pst.setString(1, name);
+           pst.setString(2, subject);
+           pst.setString(3, address);
+   	   pst.setString(4, phone);
+           pst.setString(5, regno);
    	   pst.executeUpdate();
    	   
    	   color = "green";
@@ -54,7 +55,7 @@
    }catch(Exception ex){
    ex.printStackTrace();
    color = "red";
-   msg = "Error Occured";
+   msg = "Error Occured" + ex;
    }
    }
     %>    
@@ -95,7 +96,7 @@
             <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label>Registation No</label>
+                   <label>Registration No</label>
                         <input type="text" name="regno" class="form-control" id="regno" value="<%= rs.getString("regno") %>">
                   </div>
  </div>
@@ -103,14 +104,14 @@
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
                    <label >Teacher Name</label>
-   <input type="text" name="name" class="form-control" id="name"  value="<%= rs.getString("teachername") %>">
+   <input type="text" name="tname" class="form-control" id="tname"  value="<%= rs.getString("teachername") %>">
                   </div>
  </div>
  <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
                    <label>Subject:</label>
-   <input type="text" name="course" class="form-control" id="course" value="<%= rs.getString("subject") %>">
+   <input type="text" name="subject" class="form-control" id="subject" value="<%= rs.getString("subject") %>">
                   </div>
  </div>
  <div class="form-group">
