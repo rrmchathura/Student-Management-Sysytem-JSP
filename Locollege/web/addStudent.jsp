@@ -14,9 +14,17 @@
     <head>    
         <title>Student Registration Form</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        </head>
+    </head>
     <body>
-        
+                <style>
+        body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+       background-image:url("university_of_toronto_1_1.jpg");
+        }
+     </style>
+
          <%   
             Connection con;     
             String msg = "";
@@ -124,7 +132,7 @@
             
         </form>
         <div class="col-sm-12"  align="right">
-            <a href="index.jsp"><Button class="btn btn-success" style="width: 80px;">Home</Button></a>
+            <a href="index.jsp"><Button class="btn btn-danger" style="width: 80px;">Home</Button></a>
         </div>
     </body>
 </html>
