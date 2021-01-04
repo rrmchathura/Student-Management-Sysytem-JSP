@@ -24,6 +24,8 @@
     <div>
         <a href="addStudent.jsp" class="btn btn-success">Add Student</a>
         <a href="addTeacher.jsp" class="btn btn-primary">Add Teacher</a>
+        <a href="viewStudent.jsp" class="btn btn-warning">View Student</a>
+        <a href="listTeacher.jsp" class="btn btn-danger">View Teacher</a>
     </div>
      
         
